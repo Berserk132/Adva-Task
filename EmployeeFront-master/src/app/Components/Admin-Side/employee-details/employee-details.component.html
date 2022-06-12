@@ -1,0 +1,39 @@
+<h1 mat-dialog-title> Customer Details</h1>
+<div mat-dialog-content>
+
+  <div class="mb-3">
+    <label for="Fname" class="form-label">Name</label><br>
+    <span>{{Employee.name}}</span>
+  </div>
+  <div class="mb-3">
+    <label for="Lname" class="form-label">Salary</label><br>
+    <span>{{Employee.salary}}</span>
+  </div>
+  <div class="mb-3">
+    <label for="CustomerGender" class="form-label">Department ID</label> <br>
+    <span> {{Employee.departmentId}}</span>
+  </div>
+  <div class="mb-3">
+    <label for="customerEmail" class="form-label">Department</label><br>
+    <span>{{Employee.department}}</span>
+  </div>
+  <div class="mb-3">
+    <label for="customerDOB" class="form-label">ManagerId</label><br>
+    <span>{{Employee.managerId }}</span>
+  </div>
+
+  <div class="mb-3">
+    <label for="customerDOB" class="form-label">Manager</label><br>
+    <span>{{Employee.manager}}</span>
+  </div>
+  <!-- <div class="mb-3">
+    <label for="customerAddress" class="form-label">CustomerAddress</label><br>
+    <ul *ngFor="let address of Customer.addresses">
+      <li>{{address}}</li>
+    </ul>
+  </div> -->
+</div>
+<div mat-dialog-action [align]="'end'">
+  <button mat-raised-button mat-button color="warn" mat-dialog-close>Close</button>
+
+</div>

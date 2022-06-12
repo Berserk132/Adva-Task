@@ -1,0 +1,47 @@
+<h1 mat-dialog-title>Employee Form</h1>
+<form [formGroup]="EmployeeForm" ngNativeValidate (ngSubmit)="addPCustomer()">
+  <div mat-dialog-content>
+    <div class="mb-3">
+      <label for="name" class="form-label">Name</label>
+      <input type="text" class="form-control" name="name" placeholder="Employee Name" required formControlName="Name">
+
+
+
+    </div>
+    <div class="mb-3">
+      <label for="salary" class="form-label">Salary</label>
+      <input type="text" class="form-control" name="salary" placeholder="Salary" required formControlName="Salary">
+    </div>
+    <div class="mb-3">
+      <label for="deptId" class="form-label">Department</label>
+      <select class="form-select" aria-label="Default select example" formControlName="DepartmentId">
+        <ng-container *ngFor="let dept of departments">
+          <option [value]="dept.id">{{dept.name}}</option>
+        </ng-container>
+      </select>
+    </div>
+    <div class="mb-3">
+      <label for="managerId" class="form-label">Manager</label>
+      <select class="form-select" aria-label="Default select example" formControlName="ManagerId">
+        <ng-container *ngFor="let manager of managers">
+          <option [value]="manager.id">{{manager.name}}</option>
+        </ng-container>
+      </select>
+    </div>
+
+
+    <!-- <div formArrayName="addresses">
+      <div class="mb-3" *ngFor=" let addresses of customerAddresses.controls; let i=index">
+        <label for="{{'uAddress-' + i}}" class="form-label">Address No. #{{i+1}}</label>
+        <input type="text" [formControlName]="i" class="form-control" id="{{'uAddress-' + i}}"
+          name="{{'userPhone-' + i}}">
+      </div>
+      <button type="button" class="btn btn-primary" (click)="addAdressNo($event)"> + </button>
+    </div> -->
+  </div>
+  <div mat-dialog-action [align]="'end'">
+    <button mat-raised-button mat-button color="warn" mat-dialog-close>Close</button>
+    <button style="margin-left:8px ;" mat-raised-button color="primary" type="submit">{{actionBtn}}</button>
+  </div>
+
+</form>

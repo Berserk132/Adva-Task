@@ -1,0 +1,45 @@
+<div class="container-fluid page">
+  <div class="page__box p-3 mt-2">Employees</div>
+  <div class="page__content shadow p-3">
+    <button class="test" mat-raised-button mat-button color="primary" (click)="openDialog()">Add Customer</button>
+    <div>
+
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Name</th>
+            <th scope="col">Salary</th>
+            <th scope="col">DepartmentId</th>
+            <th scope="col">Department</th>
+            <th scope="col">ManagerId</th>
+            <th scope="col">Manager</th>
+            <th scope="col">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of dataSource; let i=index">
+            <td>{{item?.id}}</td>
+            <td>{{item?.name}}</td>
+            <td>{{item?.salary}}</td>
+            <td>{{item?.departmentId}}</td>
+            <td>{{item?.department}}</td>
+            <td>{{item?.managerId}}</td>
+            <td>{{item?.manager}}</td>
+            <td>
+              <button mat-icon-button class="btn-primary m-1" (click)="showDetails(item)">
+                <mat-icon>visibility</mat-icon>
+              </button>
+              <button class="btn btn-info" (click)=" editCustomer(item)">
+                <mat-icon>edit</mat-icon>
+              </button>
+              <button (click)="deleteCustomer(item.id)" class="btn btn-danger mx-3">
+                <mat-icon>delete</mat-icon>
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

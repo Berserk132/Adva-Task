@@ -1,0 +1,21 @@
+<h1 mat-dialog-title> Customer Details</h1>
+<div mat-dialog-content>
+
+  <div class="mb-3">
+    <label for="Fname" class="form-label">Name</label><br>
+    <span>{{dept.name}}</span>
+  </div>
+  <div class="mb-3">
+    <label for="customerDOB" class="form-label">ManagerId</label><br>
+    <span>{{dept.managerId }}</span>
+  </div>
+
+  <div class="mb-3">
+    <label for="customerDOB" class="form-label">Manager</label><br>
+    <span>{{dept.manager}}</span>
+  </div>
+</div>
+<div mat-dialog-action [align]="'end'">
+  <button mat-raised-button mat-button color="warn" mat-dialog-close>Close</button>
+
+</div>
